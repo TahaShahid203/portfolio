@@ -53,6 +53,14 @@ export default function Hero() {
             >
               Get In Touch
             </button>
+            <a 
+              href="/Taha_Shahid_Resume.pdf" 
+              download="Taha_Shahid_Resume.pdf"
+              className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+            >
+              <i className="fas fa-download"></i>
+              Download Resume
+            </a>
           </div>
         </div>
         

@@ -34,6 +34,10 @@ export default function Navigation() {
               <button onClick={() => scrollToSection('skills')} className="hover:text-blue-400 transition-colors duration-300">Skills</button>
               <button onClick={() => scrollToSection('certifications')} className="hover:text-blue-400 transition-colors duration-300">Certifications</button>
               <button onClick={() => scrollToSection('contact')} className="hover:text-blue-400 transition-colors duration-300">Contact</button>
+              <a href="/Taha_Shahid_Resume.pdf" download="Taha_Shahid_Resume.pdf" className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors duration-300 flex items-center gap-2">
+                <i className="fas fa-download text-sm"></i>
+                <span>Resume</span>
+              </a>
             </div>
           </div>
           
@@ -58,6 +62,9 @@ export default function Navigation() {
               <button onClick={() => scrollToSection('skills')} className="block px-3 py-2 hover:text-blue-400 transition-colors duration-300 w-full text-left">Skills</button>
               <button onClick={() => scrollToSection('certifications')} className="block px-3 py-2 hover:text-blue-400 transition-colors duration-300 w-full text-left">Certifications</button>
               <button onClick={() => scrollToSection('contact')} className="block px-3 py-2 hover:text-blue-400 transition-colors duration-300 w-full text-left">Contact</button>
+              <a href="/Taha_Shahid_Resume.pdf" download="Taha_Shahid_Resume.pdf" className="block mx-3 my-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors duration-300 text-center">
+                <i className="fas fa-download mr-2"></i>Download Resume
+              </a>
             </div>
           </div>
         )}

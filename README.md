@@ -153,7 +153,7 @@ npx tsx server/index.ts
 1. **Push to GitHub** (if not done already)
    ```bash
    git add .
-   git commit -m "Add Vercel deployment config"
+   git commit -m "Add Vercel deployment config with build dependencies"
    git push origin main
    ```
 
@@ -164,8 +164,8 @@ npx tsx server/index.ts
    - Vercel will automatically detect it as a Node.js project
 
 3. **Configure Framework Preset**
-   - **Framework Preset**: Select **"Other"** or **"Node.js"**
-   - Vercel will automatically detect build settings from `vercel.json`
+   - **Framework Preset**: Select **"Other"**
+   - Vercel will use the build settings from `vercel.json`
 
 4. **Set Environment Variables**
    In Vercel dashboard:

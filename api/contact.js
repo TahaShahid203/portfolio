@@ -15,7 +15,8 @@ export default async function handler(req, res) {
   try {
     const { name, email, message } = contactFormSchema.parse(req.body);
     
-    const transporter = nodemailer.createTransporter({
+    // Fix: createTransport not createTransporter
+    const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
         user: process.env.EMAIL_USER || "tahashahid203@gmail.com",
@@ -33,19 +34,29 @@ export default async function handler(req, res) {
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Message:</strong></p>
         <p>${message.replace(/\n/g, "<br>")}</p>
+        <hr>
+        <p><small>This message was sent from your portfolio website contact form.</small></p>
       `,
       replyTo: email
     });
     
     res.status(200).json({
       success: true,
-      message: "Message sent successfully!"
+      message: "Message sent successfully! I'll get back to you soon."
     });
   } catch (error) {
-    console.error(error);
+    console.error("Email sending error:", error);
+    
+    if (error instanceof z.ZodError) {
+      return res.status(400).json({
+        success: false,
+        message: "Please fill in all fields correctly."
+      });
+    }
+    
     res.status(500).json({
       success: false,
-      message: "Failed to send message."
+      message: "Failed to send message. Please try again or contact me directly at tahashahid203@gmail.com"
     });
   }
 }

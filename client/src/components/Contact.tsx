@@ -143,7 +143,7 @@ export default function Contact() {
                   <a href="https://github.com/TahaShahid203" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 transform hover:scale-110" title="GitHub">
                     <i className="fab fa-github"></i>
                   </a>
-                  <a href="https://linkedin.com/in/taha-shahid" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 transform hover:scale-110" title="LinkedIn">
+                  <a href="https://www.linkedin.com/in/taha-shahid-website-developer/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 transform hover:scale-110" title="LinkedIn">
                     <i className="fab fa-linkedin"></i>
                   </a>
                   <button onClick={downloadResume} className="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2" title="Download Resume">

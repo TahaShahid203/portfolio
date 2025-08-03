@@ -55,7 +55,7 @@ A responsive portfolio website built with React, TypeScript, Node.js, and Tailwi
    
    **For Windows:**
    ```cmd
-   npx cross-env NODE_ENV=development npx tsx server/index.ts
+   npx cross-env NODE_ENV=development HOST=127.0.0.1 npx tsx server/index.ts
    ```
    
    **For macOS/Linux:**
@@ -84,12 +84,13 @@ If you encounter `NODE_ENV is not recognized` error on Windows, you have two opt
 
 ### Option 1: Use cross-env (Recommended)
 ```cmd
-npx cross-env NODE_ENV=development npx tsx server/index.ts
+npx cross-env NODE_ENV=development HOST=127.0.0.1 npx tsx server/index.ts
 ```
 
-### Option 2: Set environment variable separately
+### Option 2: Set environment variables separately
 ```cmd
 set NODE_ENV=development
+set HOST=127.0.0.1
 npx tsx server/index.ts
 ```
 

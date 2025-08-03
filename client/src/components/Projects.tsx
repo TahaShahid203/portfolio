@@ -101,7 +101,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" ref={sectionRef} className="py-20 bg-gray-900">
+    <section id="projects" ref={sectionRef} className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -116,7 +116,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div 
               key={project.title}
-              className={`bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-6 card-hover transition-all duration-700 ${
+              className={`bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 card-hover transition-all duration-700 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{transitionDelay: `${index * 0.1}s`}}

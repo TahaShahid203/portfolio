@@ -22,7 +22,7 @@ export default function Education() {
   }, []);
 
   return (
-    <section id="education" ref={sectionRef} className="py-20 bg-gray-800">
+    <section id="education" ref={sectionRef} className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -39,7 +39,7 @@ export default function Education() {
             <div className="absolute left-0 top-0 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
             <div className="absolute left-2 top-4 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500 h-full"></div>
             
-            <div className="bg-gray-700 rounded-xl p-6 ml-8 card-hover">
+            <div className="bg-gray-800 rounded-xl p-6 ml-8 card-hover">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                 <h3 className="text-xl font-bold text-white">BS Computer Science</h3>
                 <span className="text-blue-400 font-semibold">2022-2026</span>
@@ -55,7 +55,7 @@ export default function Education() {
           <div className={`relative pl-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`} style={{transitionDelay: '0.2s'}}>
             <div className="absolute left-0 top-0 w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
             
-            <div className="bg-gray-700 rounded-xl p-6 ml-8 card-hover">
+            <div className="bg-gray-800 rounded-xl p-6 ml-8 card-hover">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                 <h3 className="text-xl font-bold text-white">FSc</h3>
                 <span className="text-purple-400 font-semibold">2020-2022</span>

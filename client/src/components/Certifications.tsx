@@ -61,7 +61,7 @@ export default function Certifications() {
           {certifications.map((cert, index) => (
             <div 
               key={cert.title}
-              className={`bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-6 card-hover transition-all duration-700 ${
+              className={`bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 card-hover transition-all duration-700 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{transitionDelay: `${index * 0.1}s`}}

@@ -52,7 +52,7 @@ export default function Projects() {
       icon: "fab fa-stack-overflow",
       iconColor: "from-orange-400 to-red-500",
       categoryColor: "text-orange-400",
-      link: "https://github.com/TahaShahid203/stackoverflow-clone-with-nextjs",
+      link: "https://github.com/TahaShahid203/stackoverflow_clone_with_nextjs",
       linkType: "github"
     },
     {
@@ -74,7 +74,7 @@ export default function Projects() {
       icon: "fas fa-comments",
       iconColor: "from-blue-400 to-cyan-500",
       categoryColor: "text-blue-400",
-      link: "https://github.com/TahaShahid203/Threads-App-Clone",
+      link: "https://github.com/TahaShahid203/Threads_App_Clone",
       linkType: "github"
     }
   ];

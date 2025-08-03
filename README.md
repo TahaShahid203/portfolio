@@ -141,15 +141,67 @@ npx tsx server/index.ts
 - Optimized for all screen sizes
 - Touch-friendly navigation
 
-## Deployment
+## Deployment on Vercel
 
-The project is ready for deployment on platforms like:
-- Vercel
-- Netlify
-- Railway
-- Heroku
+### Prerequisites
+- GitHub account with your portfolio code
+- Vercel account (free tier works)
+- Gmail App Password for contact form
 
-Remember to set the `GMAIL_APP_PASSWORD` environment variable in your deployment platform.
+### Step-by-Step Deployment
+
+1. **Push to GitHub** (if not done already)
+   ```bash
+   git add .
+   git commit -m "Add Vercel deployment config"
+   git push origin main
+   ```
+
+2. **Import Project to Vercel**
+   - Go to [vercel.com](https://vercel.com) and sign in
+   - Click "New Project"
+   - Import your GitHub repository
+   - Vercel will automatically detect it as a Node.js project
+
+3. **Configure Build Settings** (if prompted)
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+   - **Install Command**: `npm install`
+
+4. **Set Environment Variables**
+   In Vercel dashboard:
+   - Go to your project settings
+   - Navigate to "Environment Variables"
+   - Add: `GMAIL_APP_PASSWORD` with your Gmail app password value
+   - Add: `NODE_ENV` with value `production`
+
+5. **Deploy**
+   - Click "Deploy"
+   - Vercel will build and deploy your project
+   - You'll get a live URL (e.g., `your-portfolio.vercel.app`)
+
+### Custom Domain (Optional)
+- In Vercel dashboard, go to "Domains"
+- Add your custom domain
+- Follow DNS configuration instructions
+
+### Environment Variables Required
+```
+GMAIL_APP_PASSWORD=your_gmail_app_password_here
+NODE_ENV=production
+```
+
+### Troubleshooting Vercel Deployment
+
+**If build fails:**
+- Check build logs in Vercel dashboard
+- Ensure all dependencies are in `package.json`
+- Verify environment variables are set
+
+**If contact form doesn't work:**
+- Verify `GMAIL_APP_PASSWORD` is set correctly
+- Check function logs in Vercel dashboard
+- Ensure Gmail 2-step verification is enabled
 
 ## Troubleshooting
 

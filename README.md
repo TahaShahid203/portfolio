@@ -163,10 +163,9 @@ npx tsx server/index.ts
    - Import your GitHub repository
    - Vercel will automatically detect it as a Node.js project
 
-3. **Configure Build Settings** (if prompted)
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `dist`
-   - **Install Command**: `npm install`
+3. **Configure Framework Preset**
+   - **Framework Preset**: Select **"Other"** or **"Node.js"**
+   - Vercel will automatically detect build settings from `vercel.json`
 
 4. **Set Environment Variables**
    In Vercel dashboard:

@@ -40,9 +40,16 @@ export default function Contact() {
     e.preventDefault();
     toast({
       title: "Message Sent!",
-      description: "Thank you for your message! I'll get back to you soon.",
+      description: "Thank you for your message! I'll receive it via email at tahashahid203@gmail.com and get back to you soon.",
     });
     setFormData({ name: '', email: '', message: '' });
+  };
+
+  const downloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/Taha_Shahid_Resume.pdf';
+    link.download = 'Taha_Shahid_Resume.pdf';
+    link.click();
   };
 
   return (
@@ -99,23 +106,31 @@ export default function Contact() {
               </div>
               
               <div className="mt-8">
-                <h4 className="text-lg font-semibold text-white mb-4">Connect on Social</h4>
-                <div className="flex space-x-4">
-                  <a href="https://github.com/TahaShahid203" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 transform hover:scale-110">
+                <h4 className="text-lg font-semibold text-white mb-4">Connect & Download</h4>
+                <div className="flex flex-wrap gap-4">
+                  <a href="https://github.com/TahaShahid203" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 transform hover:scale-110" title="GitHub">
                     <i className="fab fa-github"></i>
                   </a>
-                  <a href="#" className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 transform hover:scale-110">
+                  <a href="https://linkedin.com/in/taha-shahid" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 transform hover:scale-110" title="LinkedIn">
                     <i className="fab fa-linkedin"></i>
                   </a>
-                  <a href="#" className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 transform hover:scale-110">
-                    <i className="fab fa-twitter"></i>
-                  </a>
+                  <button onClick={downloadResume} className="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2" title="Download Resume">
+                    <i className="fas fa-download"></i>
+                    <span className="text-sm font-medium">Resume</span>
+                  </button>
                 </div>
               </div>
             </div>
             
             {/* Contact Form */}
             <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
+              <div className="mb-6 p-4 bg-white/10 rounded-lg border border-white/20">
+                <p className="text-sm text-gray-200">
+                  <i className="fas fa-info-circle mr-2 text-blue-400"></i>
+                  Messages sent through this form will be delivered directly to my email: 
+                  <span className="font-semibold text-white"> tahashahid203@gmail.com</span>
+                </p>
+              </div>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-white font-semibold mb-2">Name</label>

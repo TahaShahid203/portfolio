@@ -36,13 +36,45 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message! I'll receive it via email at tahashahid203@gmail.com and get back to you soon.",
-    });
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        toast({
+          title: "Message Sent!",
+          description: result.message,
+        });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        toast({
+          title: "Error",
+          description: result.message,
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or contact me directly at tahashahid203@gmail.com",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const downloadResume = () => {
@@ -130,6 +162,10 @@ export default function Contact() {
                   Messages sent through this form will be delivered directly to my email: 
                   <span className="font-semibold text-white"> tahashahid203@gmail.com</span>
                 </p>
+                <p className="text-xs text-gray-300 mt-2">
+                  <i className="fas fa-shield-alt mr-1 text-green-400"></i>
+                  Your information is secure and will only be used to respond to your message.
+                </p>
               </div>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -176,10 +212,20 @@ export default function Contact() {
                 
                 <button 
                   type="submit" 
-                  className="w-full bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
+                  disabled={isSubmitting}
+                  className="w-full bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 >
-                  Send Message
-                  <i className="fas fa-paper-plane ml-2"></i>
+                  {isSubmitting ? (
+                    <>
+                      <i className="fas fa-spinner fa-spin mr-2"></i>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <i className="fas fa-paper-plane ml-2"></i>
+                    </>
+                  )}
                 </button>
               </form>
             </div>
